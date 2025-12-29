@@ -1,0 +1,282 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* DeFi Pool Theme - Dark with Green Accents */
+    --background: 0 0% 8%; /* #141414 - Deep black */
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 12%; /* #1F1F1F - Dark gray */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 142 71% 45%; /* #10B981 - Emerald Green (DeFi standard) */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 20%; /* #333333 */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 142 71% 45%; /* Green */
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%; /* #333333 */
+    --input: 0 0% 20%;
+    --ring: 142 71% 45%;
+
+    --radius: 0.75rem;
+
+    /* Custom Colors */
+    --green: 142 71% 45%; /* #10B981 */
+    --green-light: 142 71% 55%;
+    --green-dark: 142 71% 35%;
+    --orange: 25 95% 53%; /* #F59E0B */
+
+    /* Chart Colors */
+    --chart-1: 142 71% 45%; /* Primary Green */
+    --chart-2: 199 89% 48%; /* Blue */
+    --chart-3: 25 95% 53%; /* Orange */
+    --chart-4: 280 100% 70%; /* Purple */
+    --chart-5: 0 84% 60%; /* Red */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply text-foreground;
+    background: hsl(var(--background));
+    min-height: 100vh;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("/drip-am1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      rgba(5, 5, 5, 0.92) 10%,
+      rgba(5, 5, 5, 0.75) 45%,
+      rgba(5, 5, 5, 0.3) 100%
+    );
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism Card - used for summary & stream cards */
+  .glass-card {
+    background: linear-gradient(
+      135deg,
+      rgba(8, 12, 16, 0.65),
+      rgba(8, 20, 24, 0.55)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .card-hover {
+    transition: all 0.2s ease;
+  }
+
+  .card-hover:hover {
+    border-color: hsl(var(--primary));
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+  }
+
+  /* Green Accent Styles */
+  .text-green {
+    color: #10B981;
+  }
+
+  .bg-green {
+    background-color: #10B981;
+  }
+
+  .border-green {
+    border-color: #10B981;
+  }
+
+  /* Clean Hover Effects */
+  .hover-lift {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Smooth Fade Animation */
+  .fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Glow Effect for Green Text */
+  .text-green-glow {
+    color: #10B981;
+    text-shadow: 0 0 20px rgba(16, 185, 129, 0.5), 0 0 40px rgba(16, 185, 129, 0.3);
+  }
+
+  /* Pulse Animation Delay Utilities */
+  .delay-500 {
+    animation-delay: 0.5s;
+  }
+
+  .delay-700 {
+    animation-delay: 0.7s;
+  }
+
+  .delay-1000 {
+    animation-delay: 1s;
+  }
+
+  /* Custom RainbowKit Connect Button Styling - Match Create Stream Button */
+  :global([data-rk]) button {
+    background-color: #10B981 !important;
+    color: white !important;
+    border-color: #10B981 !important;
+  }
+
+  :global([data-rk]) button:hover {
+    background-color: #059669 !important;
+    border-color: #059669 !important;
+  }
+
+  /* Dripping Animation */
+  @keyframes drip {
+    0% {
+      transform: translateY(0) scaleY(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(150px) scaleY(1.2);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(300px) scaleY(0.8);
+      opacity: 0;
+    }
+  }
+
+  @keyframes fill {
+    0%, 100% {
+      background: linear-gradient(to top, rgba(16, 185, 129, 0.3), rgba(16, 185, 129, 0.1));
+    }
+    50% {
+      background: linear-gradient(to top, rgba(16, 185, 129, 0.5), rgba(16, 185, 129, 0.2));
+    }
+  }
+
+  .animate-drip {
+    animation: drip 2s ease-in-out infinite;
+  }
+
+  .animate-fill {
+    animation: fill 3s ease-in-out infinite;
+  }
+
+  .diagonal-drop {
+    position: absolute;
+    top: var(--start-top, 110px);
+    left: 50%;
+    transform: translateX(-50%);
+    animation: dripDiagonal var(--duration, 3s) linear infinite;
+  }
+
+  @keyframes dripDiagonal {
+    0% {
+      top: var(--start-top, 110px);
+      left: 50%;
+      opacity: 0;
+    }
+    15% {
+      opacity: 1;
+    }
+    85% {
+      opacity: 1;
+    }
+    100% {
+      top: calc(var(--start-top, 110px) + var(--dy, 240px));
+      left: var(--target-x, 50%);
+      opacity: 0;
+    }
+  }
+}
+
+/* Custom RainbowKit Connect Button Styling - Match Create Stream Button (Green) */
+/* Comprehensive targeting for RainbowKit ConnectButton */
+.connect-button-wrapper button,
+.connect-button-wrapper [role="button"],
+.connect-button-wrapper button[aria-label*="Connect"],
+.connect-button-wrapper button[data-testid],
+.connect-button-wrapper [data-rk] button,
+button[aria-label*="Connect"],
+button[aria-label*="Account"],
+button[data-testid="rk-connect-button"] {
+  background-color: #10B981 !important;
+  color: white !important;
+  border: none !important;
+  font-weight: 500 !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.connect-button-wrapper button:hover,
+.connect-button-wrapper [role="button"]:hover,
+.connect-button-wrapper button[aria-label*="Connect"]:hover,
+.connect-button-wrapper button[data-testid]:hover,
+.connect-button-wrapper [data-rk] button:hover,
+button[aria-label*="Connect"]:hover,
+button[data-testid="rk-connect-button"]:hover {
+  background-color: #059669 !important;
+}
+
+/* Global RainbowKit button override - exclude account button when connected */
+[data-rk] button:not([data-testid="rk-account-button"]),
+[data-rk] > div > button {
+  background-color: #10B981 !important;
+  color: white !important;
+  border: none !important;
+}
+
+[data-rk] button:not([data-testid="rk-account-button"]):hover,
+[data-rk] > div > button:hover {
+  background-color: #059669 !important;
+}

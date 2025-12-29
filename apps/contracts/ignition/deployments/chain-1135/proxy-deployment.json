@@ -1,0 +1,18 @@
+{
+  "chainId": "1135",
+  "network": "lisk",
+  "deployedAt": "2025-12-14T15:35:22.850Z",
+  "deployer": "0x7818CEd1298849B47a9B56066b5adc72CDDAf733",
+  "contracts": {
+    "DripCore": {
+      "proxy": "0x87BcC4Ef6817d3137568Be91f019bC4e35d9A4b6",
+      "implementation": "0x50203ba83FB9Ce709Dd7Ddd4D335aEcdF532F31a",
+      "admin": "0x4F6Bee0bAf044F7124fE701ade99F049ef402a88"
+    },
+    "SubscriptionManager": "0x009AB24eC563d05cfD3345E6128cBaFAb8b62299"
+  },
+  "parameters": {
+    "platformFeeRecipient": "0x7818CEd1298849B47a9B56066b5adc72CDDAf733",
+    "proxyAdmin": "0x7818CEd1298849B47a9B56066b5adc72CDDAf733"
+  }
+}

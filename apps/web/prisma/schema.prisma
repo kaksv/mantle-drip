@@ -1,0 +1,42 @@
+// Prisma schema for leaderboard & indexer state
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model UserStats {
+  address            String   @id
+  streamsCreated     Int      @default(0)
+  withdrawalsClaimed Int      @default(0)
+  totalDeposited     Decimal  @default(0)
+  totalWithdrawn     Decimal  @default(0)
+  points             Decimal  @default(0)
+  updatedAt          DateTime @updatedAt
+}
+
+model IndexerState {
+  id                Int    @id @default(1)
+  lastProcessedBlock BigInt @default(0)
+}
+
+model SelfVerification {
+  address       String   @id // User wallet address
+  isVerified    Boolean  @default(false)
+  proofId       String?  // Self Protocol proof ID
+  verifiedAt    DateTime?
+  sessionId     String?  // Session ID used for verification
+  disclosures   Json?    // Stored disclosure data (date of birth, etc.)
+  metadata      Json?    // Additional verification metadata
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([isVerified])
+  @@index([verifiedAt])
+}
+
+

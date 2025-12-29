@@ -1,0 +1,20 @@
+{
+  "chainId": "42220",
+  "network": "celo",
+  "deployedAt": "2025-11-28T13:42:25.673Z",
+  "deployer": "0x7818CEd1298849B47a9B56066b5adc72CDDAf733",
+  "contracts": {
+    "DripCore": {
+      "proxy": "0x5530975fDe062FE6706298fF3945E3d1a17A310a",
+      "implementation": "0x081cB570E86bc3aA09FE5d848c2d91368fcEf0dE",
+      "admin": "0x90FD81efC0bB74cca2997ebB6D77e5145788f481"
+    },
+    "SubscriptionManager": "0xBE3e232657233224F14b7b2a5625f69aF8F95054"
+  },
+  "parameters": {
+    "platformFeeRecipient": "0x7818CEd1298849B47a9B56066b5adc72CDDAf733",
+    "proxyAdmin": "0x7818CEd1298849B47a9B56066b5adc72CDDAf733"
+  },
+  "upgradedAt": "2025-12-06T02:19:42.940Z",
+  "upgradedBy": "0x7818CEd1298849B47a9B56066b5adc72CDDAf733"
+}

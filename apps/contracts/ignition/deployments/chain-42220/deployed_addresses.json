@@ -1,0 +1,6 @@
+{
+  "DripProxyModule#DripCoreProxy": "0x5530975fDe062FE6706298fF3945E3d1a17A310a",
+  "DripProxyModule#DripCoreImplementation": "0x8F4C50979efb901C50e79e11DdC2a45FD1451eE3",
+  "DripProxyModule#ProxyAdmin": "0x90FD81efC0bB74cca2997ebB6D77e5145788f481",
+  "DripProxyModule#SubscriptionManager": "0xBE3e232657233224F14b7b2a5625f69aF8F95054"
+}

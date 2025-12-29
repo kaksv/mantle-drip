@@ -1,0 +1,20 @@
+{
+  "chainId": "11142220",
+  "network": "sepolia",
+  "deployedAt": "2025-11-28T14:58:42.124Z",
+  "deployer": "0x7818CEd1298849B47a9B56066b5adc72CDDAf733",
+  "contracts": {
+    "DripCore": {
+      "proxy": "0xfAaB5005f7844eC5499cF258F52dE29EDc74aa31",
+      "implementation": "0xe10CE60555496Af972840EAE38bcC74258627649",
+      "admin": "0xb94d80dB6a120D6c22f199c5Ff9B4CF9C8F4EE25"
+    },
+    "SubscriptionManager": "0xb8eCfcC00e1d63525b81cF2bC17125f56952D384"
+  },
+  "parameters": {
+    "platformFeeRecipient": "0x7818CEd1298849B47a9B56066b5adc72CDDAf733",
+    "proxyAdmin": "0x7818CEd1298849B47a9B56066b5adc72CDDAf733"
+  },
+  "upgradedAt": "2025-12-06T02:19:18.275Z",
+  "upgradedBy": "0x7818CEd1298849B47a9B56066b5adc72CDDAf733"
+}
