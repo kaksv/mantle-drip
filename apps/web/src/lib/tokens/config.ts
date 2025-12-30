@@ -1,4 +1,4 @@
-import { CELO_MAINNET_ID, CELO_SEPOLIA_ID, CELO_ALFAJORES_ID, LISK_MAINNET_ID } from "@/lib/contracts/config";
+import { CELO_MAINNET_ID, CELO_SEPOLIA_ID, CELO_ALFAJORES_ID, LISK_MAINNET_ID, MANTLE_TESTNET_ID, MANTLE_MAINNET_ID } from "@/lib/contracts/config";
 
 /**
  * Token interface for token configuration
@@ -46,6 +46,18 @@ export const TOKENS_BY_NETWORK: Record<number, Token[]> = {
     { symbol: "USDC", address: "0xcebA9300f2b948710d2653dD7B07f33A8B32118C", decimals: 6, name: "USD Coin" },
     { symbol: "USDT", address: "0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e", decimals: 6, name: "Tether USD" },
   ],
+  // Mantle Testnet (chainId: 5001)
+  [MANTLE_TESTNET_ID]: [
+    { symbol: "MNT", address: "0x0000000000000000000000000000000000000000", decimals: 18, name: "Mantle" },
+    { symbol: "USDC", address: "0xcebA9300f2b948710d2653dD7B07f33A8B32118C", decimals: 6, name: "USD Coin" },
+    { symbol: "USDT", address: "0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e", decimals: 6, name: "Tether USD" },
+  ],
+  // Mantle Mainnet (chainId: 5000)
+  [MANTLE_MAINNET_ID]: [
+    { symbol: "MNT", address: "0x0000000000000000000000000000000000000000", decimals: 18, name: "Mantle" },
+    { symbol: "USDC", address: "0x09Bc4E0D864854c6aFB6eB9A9cdF58aC190D0dF9", decimals: 6, name: "USD Coin" },
+    { symbol: "USDT", address: "0x201EBa5CC46D216Ce6DC03F6a759e8E766e956aE", decimals: 6, name: "Tether USD" },
+  ],
   // Lisk Mainnet (chainId: 1135)
   // Token addresses from official Lisk documentation: https://docs.lisk.com/about-lisk/deployed-tokens
   // Note: Native currency is ETH, LSK is an ERC20 token
@@ -65,7 +77,7 @@ export function getTokenByAddress(
   chainId: number
 ): Token | undefined {
   // Try current network first, then fallback to Celo Sepolia
-  const tokens = TOKENS_BY_NETWORK[chainId] || TOKENS_BY_NETWORK[CELO_SEPOLIA_ID];
+  const tokens = TOKENS_BY_NETWORK[chainId] || TOKENS_BY_NETWORK[MANTLE_TESTNET_ID];
   return tokens.find(
     (t) => t.address.toLowerCase() === address.toLowerCase()
   );
@@ -76,7 +88,7 @@ export function getTokenByAddress(
  */
 export function getTokensForNetwork(chainId: number): Token[] {
   // Return tokens for the specified network, fallback to Celo Sepolia if not found
-  return TOKENS_BY_NETWORK[chainId] || TOKENS_BY_NETWORK[CELO_SEPOLIA_ID];
+  return TOKENS_BY_NETWORK[chainId] || TOKENS_BY_NETWORK[MANTLE_TESTNET_ID];
 }
 
 /**
@@ -87,7 +99,7 @@ export function getTokenAddressBySymbol(
   chainId: number
 ): `0x${string}` | undefined {
   // Get tokens for the specified network, fallback to Celo Sepolia if not found
-  const tokens = TOKENS_BY_NETWORK[chainId] || TOKENS_BY_NETWORK[CELO_SEPOLIA_ID];
+  const tokens = TOKENS_BY_NETWORK[chainId] || TOKENS_BY_NETWORK[MANTLE_TESTNET_ID];
   const token = tokens.find((t) => t.symbol.toUpperCase() === symbol.toUpperCase());
   return token?.address;
 }

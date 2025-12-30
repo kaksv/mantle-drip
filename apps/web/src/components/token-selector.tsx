@@ -8,7 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { CELO_SEPOLIA_ID } from "@/lib/contracts/config";
+import { CELO_SEPOLIA_ID, MANTLE_TESTNET_ID, MANTLE_MAINNET_ID } from "@/lib/contracts/config";
 import { TOKENS_BY_NETWORK, getTokenByAddress, type Token } from "@/lib/tokens/config";
 
 // Re-export Token interface for backward compatibility
@@ -22,7 +22,7 @@ interface TokenSelectorProps {
 
 export function TokenSelector({ value, onValueChange, disabled }: TokenSelectorProps) {
   const chainId = useChainId();
-  const tokens = TOKENS_BY_NETWORK[chainId] || TOKENS_BY_NETWORK[CELO_SEPOLIA_ID];
+  const tokens = TOKENS_BY_NETWORK[chainId] || TOKENS_BY_NETWORK[MANTLE_TESTNET_ID];
 
   const selectedToken = tokens.find((t) => t.address === value);
 
