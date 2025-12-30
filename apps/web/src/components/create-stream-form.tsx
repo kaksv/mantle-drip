@@ -434,8 +434,8 @@ export function CreateStreamForm() {
                 <span className="text-sm font-medium">You&apos;ll deposit now</span>
                 <span className="text-lg font-bold">
                   {calculatedDeposit}{" "}
-                  {getTokenByAddress(watchedToken as `0x${string}`, chainId)?.symbol ||
-                    "MNT"}
+                   {/* {getTokenByAddress(watchedToken as `0x${string}`, chainId)?.symbol || "MNT"}  */}
+                  {getTokenByAddress(watchedToken as `0x${string}`, MANTLE_TESTNET_ID)?.symbol || "MNT"}
                 </span>
               </div>
               <p className="text-xs text-muted-foreground">
