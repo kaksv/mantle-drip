@@ -435,7 +435,7 @@ export function CreateStreamForm() {
                 <span className="text-lg font-bold">
                   {calculatedDeposit}{" "}
                   {getTokenByAddress(watchedToken as `0x${string}`, chainId)?.symbol ||
-                    "CELO"}
+                    "MNT"}
                 </span>
               </div>
               <p className="text-xs text-muted-foreground">

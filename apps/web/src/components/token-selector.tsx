@@ -22,7 +22,9 @@ interface TokenSelectorProps {
 
 export function TokenSelector({ value, onValueChange, disabled }: TokenSelectorProps) {
   const chainId = useChainId();
-  const tokens = TOKENS_BY_NETWORK[chainId] || TOKENS_BY_NETWORK[MANTLE_TESTNET_ID];
+  // const tokens = TOKENS_BY_NETWORK[chainId] || TOKENS_BY_NETWORK[MANTLE_TESTNET_ID];
+  const tokens = TOKENS_BY_NETWORK[MANTLE_TESTNET_ID];
+
 
   const selectedToken = tokens.find((t) => t.address === value);
 
