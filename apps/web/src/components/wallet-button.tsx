@@ -11,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { mantleTestnet, mantle, celo } from "wagmi/chains";
-import { celoSepolia, liskMainnet, LISK_MAINNET_ID } from "@/lib/contracts/config";
+import { celoSepolia, liskMainnet, LISK_MAINNET_ID, MANTLE_TESTNET_ID, MANTLE_MAINNET_ID } from "@/lib/contracts/config";
 import { formatEther } from "viem";
 import { ChevronDown, LogOut } from "lucide-react";
 
@@ -19,6 +19,8 @@ import { ChevronDown, LogOut } from "lucide-react";
 import { celoAlfajores } from "wagmi/chains";
 
 const CHAINS = [
+  { id: mantleTestnet.id, name: "Mantle Testnet" },
+  { id: mantle.id, name: "Mantle Mainnet" },
   { id: celo.id, name: "Celo Mainnet" },
   { id: celoSepolia.id, name: "Celo Sepolia" },
   { id: celoAlfajores.id, name: "Celo Alfajores" },
@@ -89,8 +91,8 @@ export function WalletButton({ className }: WalletButtonProps) {
             {balanceLoading
               ? "Loading..."
               : celoBalance
-              ? `${parseFloat(formatEther(celoBalance.value)).toFixed(4)} ${chainId === LISK_MAINNET_ID ? "ETH" : "CELO"}`
-              : `0.0000 ${chainId === LISK_MAINNET_ID ? "ETH" : "CELO"}`}
+              ? `${parseFloat(formatEther(celoBalance.value)).toFixed(4)} ${chainId === MANTLE_TESTNET_ID ? "MNT" : "CELO"}`
+              : `0.0000 ${chainId === LISK_MAINNET_ID ? "ETH" : "MNT"}`}
           </span>
         </DropdownMenuItem>
         
