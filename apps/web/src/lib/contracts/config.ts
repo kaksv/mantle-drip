@@ -6,6 +6,8 @@ export const CELO_MAINNET_ID = 42220;
 export const CELO_SEPOLIA_ID = 11142220;
 export const CELO_ALFAJORES_ID = 44787;
 export const LISK_MAINNET_ID = 1135;
+export const MANTLE_TESTNET_ID = 5001;
+export const MANTLE_MAINNET_ID = 5000;
 
 // Define Celo Sepolia chain
 export const celoSepolia = defineChain({
@@ -28,6 +30,52 @@ export const celoSepolia = defineChain({
     },
   },
   testnet: true,
+});
+
+// Define Mantle Testnet chain
+export const mantleTestnetChain = defineChain({
+  id: MANTLE_TESTNET_ID,
+  name: "Mantle Testnet",
+  nativeCurrency: {
+    decimals: 18,
+    name: "MANTLE",
+    symbol: "MNT",
+  },
+  rpcUrls: {
+    default: {
+      http: ["https://rpc.testnet.mantle.xyz"],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: "Mantle Sepolia Explorer",
+      url: "https://sepolia.mantlescan.xyz/",
+    },
+  },
+  testnet: true,
+});
+
+// Define Mantle Mainnet
+export const mantleMainnet = defineChain({
+  id: MANTLE_MAINNET_ID,
+  name: "Mantle Mainnet",
+  nativeCurrency: {
+    decimals: 18,
+    name: "MANTLE",
+    symbol: "MNT",
+  },
+  rpcUrls: {
+    default: {
+      http: ["https://rpc.mantle.xyz","https://mantle-rpc.publicnode.com","https://mantle.drpc.org"],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: "Mantle Sepolia Explorer",
+      url: "https://mantlescan.xyz/",
+    },
+  },
+  testnet: false,
 });
 
 // Define Lisk Mainnet chain

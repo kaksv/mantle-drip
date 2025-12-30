@@ -11,6 +11,7 @@
     "deploy:alfajores": "hardhat ignition deploy ignition/modules/Drip.ts --network alfajores",
     "deploy:sepolia": "hardhat ignition deploy ignition/modules/Drip.ts --network sepolia",
     "deploy:celo": "hardhat ignition deploy ignition/modules/Drip.ts --network celo",
+    "deploy:mantleTestnet": "hardhat ignition deploy ignition/modules/Drip.ts --network mantleTestnet",
     "deploy:celo:mainnet": "hardhat ignition deploy ignition/modules/Drip.ts --network celo && node update-frontend-config.js 42220",
     "deploy:proxy": "hardhat run scripts/deploy-proxy.ts",
     "deploy:proxy:alfajores": "hardhat run scripts/deploy-proxy.ts --network alfajores",

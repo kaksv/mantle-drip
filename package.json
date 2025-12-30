@@ -14,7 +14,8 @@
     "contracts:deploy": "turbo run deploy --filter=hardhat",
     "contracts:deploy:alfajores": "turbo run deploy:alfajores --filter=hardhat",
     "contracts:deploy:sepolia": "turbo run deploy:sepolia --filter=hardhat",
-    "contracts:deploy:celo": "turbo run deploy:celo --filter=hardhat"
+    "contracts:deploy:celo": "turbo run deploy:celo --filter=hardhat",
+    "deploy:mantleTestnet": "turbo run deploy:mantleTestnet --filter=hardhat"
   },
   "devDependencies": {
     "@types/node": "^20.8.0",

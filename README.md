@@ -264,7 +264,7 @@ Drip is currently in active development. See [MILESTONES.md](./MILESTONES.md) fo
 
 ### Competitive Advantages
 
-1. **Celo-Native**: Built specifically for Mantle's low-cost, mobile-first ecosystem
+1. **Mantle-Native**: Built specifically for Mantle's low-cost, mobile-first ecosystem
 2. **Smart Contract Automation**: True autonomous execution vs. manual processes
 3. **Multi-Token Support**: Native support for USDC, USDT, MNT
 4. **Developer-Friendly**: Open APIs, SDKs, comprehensive documentation

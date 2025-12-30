@@ -49,6 +49,18 @@ const config: HardhatUserConfig = {
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
       chainId: 1135,
     },
+    // Mantle Testnet
+    mantleTestnet: {
+      url: "https://rpc.testnet.mantle.xyz",
+      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+      chainId: 5001,
+    },
+    // Mantle Mainnet
+    mantle: {
+      url: "https://rpc.mantle.xyz",
+      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+      chainId: 5000,
+    },
     // Local development
     localhost: {
       url: "http://127.0.0.1:8545",
