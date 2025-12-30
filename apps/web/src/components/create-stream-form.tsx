@@ -5,6 +5,7 @@ import { useForm, useFieldArray } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useAccount, useChainId } from "wagmi";
+import { mantleTestnetChain } from "@/lib/contracts/config";
 import { useDrip } from "@/lib/contracts";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -435,7 +436,7 @@ export function CreateStreamForm() {
                 <span className="text-lg font-bold">
                   {calculatedDeposit}{" "}
                    {/* {getTokenByAddress(watchedToken as `0x${string}`, chainId)?.symbol || "MNT"}  */}
-                  {getTokenByAddress(watchedToken as `0x${string}`, MANTLE_TESTNET_ID)?.symbol || "MNT"}
+                  {getTokenByAddress(watchedToken as `0x${string}`, mantleTestnetChain.id)?.symbol || "MNT"}
                 </span>
               </div>
               <p className="text-xs text-muted-foreground">
