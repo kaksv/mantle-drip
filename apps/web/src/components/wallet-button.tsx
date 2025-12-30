@@ -91,8 +91,8 @@ export function WalletButton({ className }: WalletButtonProps) {
             {balanceLoading
               ? "Loading..."
               : celoBalance
-              ? `${parseFloat(formatEther(celoBalance.value)).toFixed(4)} ${chainId === MANTLE_TESTNET_ID ? "MNT" : "CELO"}`
-              : `0.0000 ${chainId === LISK_MAINNET_ID ? "ETH" : "MNT"}`}
+              ? `${parseFloat(formatEther(celoBalance.value)).toFixed(4)} ${chainId === MANTLE_TESTNET_ID ? "MNT" : "ETH"}`
+              : `0.0000 ${chainId === MANTLE_TESTNET_ID ? "MNT" : "ETH"}`}
           </span>
         </DropdownMenuItem>
         
