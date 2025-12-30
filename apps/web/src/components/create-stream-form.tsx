@@ -384,7 +384,7 @@ export function CreateStreamForm() {
                 }}
               />
               <p className="text-xs text-muted-foreground">
-                Choose what you&apos;re streaming (CELO, cUSD, USDC…).
+                Choose what you&apos;re streaming (MNT, USDC, USDT…).
               </p>
               {errors.token && (
                 <p className="text-sm text-destructive">{errors.token.message}</p>

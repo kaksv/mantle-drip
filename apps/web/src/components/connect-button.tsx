@@ -7,15 +7,17 @@ import { Button } from "@/components/ui/button";
 
 export function ConnectButton() {
   const { isConnected } = useAccount();
-  const [isMinipay, setIsMinipay] = useState(false);
+  // const [isMinipay, setIsMinipay] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     // Set mounted immediately on client side
     setMounted(true);
     // @ts-ignore
-    if (typeof window !== "undefined" && window.ethereum?.isMiniPay) {
-      setIsMinipay(true);
+    if (typeof window !== "undefined") {
+      // setIsMinipay(true);
+      console.log("window.ethereum", window.ethereum);
+      
     }
   }, []);
 
@@ -30,9 +32,9 @@ export function ConnectButton() {
   }
 
   // Hide in MiniPay (auto-connects)
-  if (isMinipay) {
-    return null;
-  }
+  // if (isMinipay) {
+  //   return null;
+  // }
 
   // Hide when connected (WalletButton will show instead)
   if (isConnected) {

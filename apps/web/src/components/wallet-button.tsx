@@ -10,7 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { celo } from "wagmi/chains";
+import { mantleTestnet, mantle, celo } from "wagmi/chains";
 import { celoSepolia, liskMainnet, LISK_MAINNET_ID } from "@/lib/contracts/config";
 import { formatEther } from "viem";
 import { ChevronDown, LogOut } from "lucide-react";
