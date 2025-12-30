@@ -21,10 +21,10 @@ import { celoAlfajores } from "wagmi/chains";
 const CHAINS = [
   { id: mantleTestnet.id, name: "Mantle Testnet" },
   { id: mantle.id, name: "Mantle Mainnet" },
-  { id: celo.id, name: "Celo Mainnet" },
-  { id: celoSepolia.id, name: "Celo Sepolia" },
-  { id: celoAlfajores.id, name: "Celo Alfajores" },
-  { id: liskMainnet.id, name: "Lisk Mainnet" },
+  // { id: celo.id, name: "Celo Mainnet" },
+  // { id: celoSepolia.id, name: "Celo Sepolia" },
+  // { id: celoAlfajores.id, name: "Celo Alfajores" },
+  // { id: liskMainnet.id, name: "Lisk Mainnet" },
 ];
 
 interface WalletButtonProps {
