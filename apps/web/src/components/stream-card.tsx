@@ -49,7 +49,7 @@ export function StreamCard({
 
   const formatToken = (tokenAddress: string) => {
     if (tokenAddress === "0x0000000000000000000000000000000000000000") {
-      return "CELO";
+      return "MNT";
     }
     // You can add token symbol mapping here
     return "Token";
